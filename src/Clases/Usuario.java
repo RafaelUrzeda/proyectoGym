@@ -1,10 +1,18 @@
+package Clases;
+
+import Clases.Persona;
+import Interfaces.Actualizable;
+import Interfaces.Registrable;
+import java.sql.*;
+import java.util.Scanner;
+
 public class Usuario extends Persona implements Registrable, Actualizable {
     private double peso;
     private double altura;
     private String planEntrenamiento;
     private boolean registrado = false; // Atributo para gestionar el estado de registro
 
-    public Usuario(String nombre, int edad, String id, double peso, double altura, String planEntrenamiento) {
+    public Usuario(String nombre, int edad, int id, double peso, double altura, String planEntrenamiento) {
         super(nombre, edad, id);
         this.peso = peso;
         this.altura = altura;
@@ -46,7 +54,7 @@ public class Usuario extends Persona implements Registrable, Actualizable {
 
     public void registrar() {
         registrado = true;
-        System.out.println("Usuario registrado con éxito: " + getNombre());
+        System.out.println("Clases.Usuario registrado con éxito: " + getNombre());
     }
 
     public boolean estaRegistrado() {

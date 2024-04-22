@@ -1,9 +1,11 @@
+package Clases;
+
 public abstract class Persona {
     private String nombre;
     private int edad;
-    private String id; // Identificación única
+    private int id; // Identificación única
 
-    public Persona(String nombre, int edad, String id) {
+    public Persona(String nombre, int edad, int id) {
         this.nombre = nombre;
         this.edad = edad;
         this.id = id;
@@ -25,11 +27,11 @@ public abstract class Persona {
         this.edad = edad;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
