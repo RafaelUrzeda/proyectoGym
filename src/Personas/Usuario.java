@@ -1,5 +1,7 @@
 package Personas;
 
+import Personas.ClasesAbstractas.Persona;
+
 public class Usuario extends Persona{
     private double peso;
     private double altura;

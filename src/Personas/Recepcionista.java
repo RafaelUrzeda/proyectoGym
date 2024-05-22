@@ -1,5 +1,7 @@
 package Personas;
 
+import Personas.ClasesAbstractas.Empleado;
+
 public class Recepcionista extends Empleado{
     private String idiomas;
 

@@ -1,5 +1,7 @@
 package Personas;
 
+import Personas.ClasesAbstractas.Empleado;
+
 public class Entrenador extends Empleado{
     private String especialidad;
 

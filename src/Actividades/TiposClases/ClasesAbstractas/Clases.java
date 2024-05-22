@@ -1,7 +1,10 @@
-package Actividades;
+package Actividades.TiposClases.ClasesAbstractas;
+
+import java.util.ArrayList;
 
 import Actividades.Enums.Horario;
-import Personas.Empleado;
+import Personas.Usuario;
+import Personas.ClasesAbstractas.Empleado;
 
 public abstract class Clases {
     
@@ -9,7 +12,8 @@ public abstract class Clases {
     protected Horario horario;
     private String aforo;
     private String duracion;
-    private Empleado monitor;    
+    private Empleado monitor;  
+    private ArrayList<Usuario> listaUsuarios;  
 
     public Clases(String nombre, Horario horario, String aforo, String duracion, Empleado monitor) {
         this.nombre = nombre;
@@ -17,6 +21,7 @@ public abstract class Clases {
         this.aforo = aforo;
         this.duracion = duracion;
         this.monitor = monitor;
+        this.listaUsuarios = new ArrayList<>();
     }
     
     public String getNombre() {
@@ -59,8 +64,27 @@ public abstract class Clases {
         this.monitor = monitor;
     }
     
+    public ArrayList<Usuario> getListaUsuarios() {
+        return listaUsuarios;
+    }
+    
+    public void setListaUsuarios(ArrayList<Usuario> listaUsuarios) {
+        this.listaUsuarios = listaUsuarios;
+    }
+    
+    public boolean añadirUsuario(Usuario usuario) {
+        int aforoMaximo = Integer.parseInt(this.aforo);
+        if (this.listaUsuarios.size() < aforoMaximo) {
+            this.listaUsuarios.add(usuario);
+            return true;
+        } else {
+            System.out.println("Aforo máximo alcanzado para la clase: " + this.nombre);
+            return false;
+        }
+    }
+    
     @Override
     public String toString() {
-        return "Clase: " + nombre + "Horario: " + horario + "Aforo: " + aforo + "Duración: " + duracion + "Monitor: " + monitor;
+        return "Clase: " + nombre + " Horario: " + horario + " Aforo: " + aforo + " Duración: " + duracion + " Monitor: " + monitor;
     }
 }
