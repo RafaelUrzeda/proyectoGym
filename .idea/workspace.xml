@@ -5,9 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a35af57-2aad-4eeb-80d6-493122d92c1c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto_gym.iml" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto_gym.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proyecto_gym/Clases/Persona.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proyecto_gym/Clases/Persona.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proyecto_gym/Clases/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proyecto_gym/Clases/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proyecto_gym/DataBase/conexiondb.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proyecto_gym/DataBase/conexiondb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proyecto_gym/Interfaces/Actualizable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proyecto_gym/Interfaces/Actualizable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proyecto_gym/Interfaces/Registrable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proyecto_gym/Interfaces/Registrable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proyecto_gym/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proyecto_gym/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proyecto_gym/Util/Constantes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proyecto_gym/Util/Constantes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataBase/conexiondb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataBase/conexiondb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interfaces/Actualizable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/Actualizable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interfaces/Registrable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/Registrable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Util/Constantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Util/Constantes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,8 +71,9 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/DAW 1/Programacion/proyecto_gym/mariadb-java-client-3.3.3.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/DAW 1/Lenguaje de Marcas/.idea&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -126,6 +141,11 @@
       <workItem from="1713518516029" duration="1109000" />
       <workItem from="1713799495515" duration="1888000" />
       <workItem from="1713801407218" duration="1034000" />
+      <workItem from="1714392066438" duration="47000" />
+      <workItem from="1714404177445" duration="2107000" />
+      <workItem from="1714460464438" duration="568000" />
+      <workItem from="1714909692040" duration="21000" />
+      <workItem from="1716385303993" duration="969000" />
     </task>
     <servers />
   </component>

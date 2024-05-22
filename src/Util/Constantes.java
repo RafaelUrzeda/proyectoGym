@@ -11,4 +11,9 @@ public class Constantes {
 
     public static final String INSERT_DATOS_PERSONAS = "INSERT INTO Personas (id, nombre, edad) VALUES (?, ?, ?)";
     public static final String INSERT_DATOS_USUARIOS = "INSERT INTO Usuarios (id, id_persona, peso, altura, planEntrenamiento) VALUES (?, ?, ?, ?, ?)";
+    public static final String UPDATE_DATOS_PERSONAS = "UPDATE Personas SET nombre = ?, edad = ? WHERE id = ?";
+    public static final String UPDATE_DATOS_USUARIOS = "UPDATE Usuarios SET peso = ?, altura = ?, planEntrenamiento = ? WHERE id = ?";
+    public static final String DELETE_DATOS_PERSONAS = "DELETE FROM Personas WHERE id = ?";
+    public static final String DELETE_DATOS_USUARIOS = "DELETE FROM Usuarios WHERE id = ?";
+
 }

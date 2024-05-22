@@ -1,6 +1,16 @@
 package Interfaces;
 
 public interface Registrable {
-    void registrar();
-    boolean estaRegistrado();
+    static void registrar() {
+        // empty body
+    }
+    static boolean comprobarRegistro() {
+        return false;
+    }
+    static void actualizarDatos() {
+        // empty body
+    }
+    static void eliminarDatos() {
+        // empty body
+    }
 }

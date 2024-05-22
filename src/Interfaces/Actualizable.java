@@ -1,5 +1,7 @@
 package Interfaces;
 
 public interface Actualizable {
-    void actualizarDatos();
+    static void actualizarDatosUsuario(int id, String nombre, int edad, double peso, double altura, String planEntrenamiento) {
+        // Method body goes here
+    }
 }

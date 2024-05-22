@@ -1,11 +1,12 @@
 package DataBase;
 
+import Interfaces.*;
 import java.sql.Connection;
 import java.sql.*;
 import java.util.Scanner;
 import static Util.Constantes.*;
 
-public class conexiondb {
+public class conexiondb implements Actualizable, Registrable{
 
     public static void main(String[] args) {
         comprobarConexion();
@@ -52,7 +53,7 @@ public class conexiondb {
         }
     }
 
-    public static void registarUrusarios(String nombre,int edad,int id,double peso,int altura,String planEntrenamiento){
+    public static void registarUrusarios(String nombre,int edad,int id,double peso,double altura,String planEntrenamiento){
         try (Connection conn = DriverManager.getConnection(URL, USUARIO, CONTRASENA);
              PreparedStatement pstmt = conn.prepareStatement(INSERT_DATOS_PERSONAS)) {
             pstmt.setInt(1, id);
@@ -74,6 +75,68 @@ public class conexiondb {
             System.out.println("Datos del usuario registrados con éxito.");
         } catch (SQLException e) {
             System.err.println("Error al registrar los datos del usuario: " + e.getMessage());
+        }
+    }
+
+    public static boolean comporbarRegistro(int id){
+        try (Connection conn = DriverManager.getConnection(URL, USUARIO, CONTRASENA);
+             PreparedStatement pstmt = conn.prepareStatement(SELECT_DATOS_USUARIOS)) {
+            pstmt.setInt(1, id);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    System.out.println("El usuario con ID: " + id + " está registrado.");
+                    return true;
+                } else {
+                    System.out.println("El usuario con ID: " + id + " no está registrado.");
+                    return false;
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al conectar a la base de datos: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public static void actualizarDatos(int id, String nombre, int edad, double peso, double altura, String planEntrenamiento) {
+        try (Connection conn = DriverManager.getConnection(URL, USUARIO, CONTRASENA);
+             PreparedStatement pstmt = conn.prepareStatement(UPDATE_DATOS_PERSONAS)) {
+            pstmt.setString(1, nombre);
+            pstmt.setInt(2, edad);
+            pstmt.setInt(3, id);
+            pstmt.executeUpdate();
+            System.out.println("Datos de la persona actualizados con éxito.");
+        } catch (SQLException e) {
+            System.err.println("Error al actualizar los datos de la persona: " + e.getMessage());
+        }
+        try (Connection conn = DriverManager.getConnection(URL, USUARIO, CONTRASENA);
+             PreparedStatement pstmt = conn.prepareStatement(UPDATE_DATOS_USUARIOS)) {
+            pstmt.setDouble(1, peso);
+            pstmt.setDouble(2, altura);
+            pstmt.setString(3, planEntrenamiento);
+            pstmt.setInt(4, id);
+            pstmt.executeUpdate();
+            System.out.println("Datos del usuario actualizados con éxito.");
+        } catch (SQLException e) {
+            System.err.println("Error al actualizar los datos del usuario: " + e.getMessage());
+        }
+    }
+
+    public static void eliminarDatos(int id){
+        try (Connection conn = DriverManager.getConnection(URL, USUARIO, CONTRASENA);
+             PreparedStatement pstmt = conn.prepareStatement(DELETE_DATOS_PERSONAS)) {
+            pstmt.setInt(1, id);
+            pstmt.executeUpdate();
+            System.out.println("Datos de la persona eliminados con éxito.");
+        } catch (SQLException e) {
+            System.err.println("Error al eliminar los datos de la persona: " + e.getMessage());
+        }
+        try (Connection conn = DriverManager.getConnection(URL, USUARIO, CONTRASENA);
+             PreparedStatement pstmt = conn.prepareStatement(DELETE_DATOS_USUARIOS)) {
+            pstmt.setInt(1, id);
+            pstmt.executeUpdate();
+            System.out.println("Datos del usuario eliminados con éxito.");
+        } catch (SQLException e) {
+            System.err.println("Error al eliminar los datos del usuario: " + e.getMessage());
         }
     }
 
