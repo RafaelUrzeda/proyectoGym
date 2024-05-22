@@ -1,4 +1,6 @@
 package main;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import Actividades.ManejoActividades;
@@ -13,7 +15,6 @@ import Personas.TiposPersonas.Entrenador;
 import Personas.TiposPersonas.Gerente;
 import Personas.TiposPersonas.Recepcionista;
 import Personas.TiposPersonas.Usuario;
-
 
 public class main {
     private static ManejoPersonas manejoPersonas = new ManejoPersonas();
@@ -30,7 +31,7 @@ public class main {
             System.out.println("3. Salir");
             System.out.print("Ingrese su opción: ");
             int opcion = scanner.nextInt();
-            scanner.nextLine(); // Limpiar el buffer
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1:
@@ -69,7 +70,7 @@ public class main {
             System.out.println("13. Volver al Menú Principal");
             System.out.print("Ingrese su opción: ");
             int opcion = scanner.nextInt();
-            scanner.nextLine(); // Limpiar el buffer
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1:
@@ -139,15 +140,16 @@ public class main {
             System.out.println("3. Volver al Menú Principal");
             System.out.print("Ingrese su opción: ");
             int opcion = scanner.nextInt();
-            scanner.nextLine(); // Limpiar el buffer
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1:
                     Clases clase = crearClase();
                     manejoActividades.crearClase(clase);
                     break;
+
                 case 2:
-                    // Lógica para añadir persona a clase
+                    añadirPersonaAClase();
                     break;
                 case 3:
                     volver = true;
@@ -158,13 +160,12 @@ public class main {
         }
     }
 
-    
     private static Entrenador crearEntrenador() {
         System.out.print("Ingrese el nombre del entrenador: ");
         String nombre = scanner.nextLine();
         System.out.print("Ingrese la edad del entrenador: ");
         int edad = scanner.nextInt();
-        scanner.nextLine(); 
+        scanner.nextLine();
         System.out.print("Ingrese el DNI del entrenador: ");
         String dni = scanner.nextLine();
         System.out.print("Ingrese el número de empleado del entrenador: ");
@@ -179,11 +180,10 @@ public class main {
         return new Entrenador(nombre, edad, dni, numeroEmpleado, antiguedad, especialidad, horario);
     }
 
-    
     private static void actualizarDatosEntrenador() {
         System.out.print("Ingrese el número de empleado del entrenador a actualizar: ");
         String numeroEmpleado = scanner.nextLine();
-        scanner.nextLine(); 
+        scanner.nextLine();
 
         Entrenador entrenador = manejoPersonas.obtenerEntrenadorPorNumeroEmpleado(numeroEmpleado);
 
@@ -218,13 +218,12 @@ public class main {
         }
     }
 
-
     private static Gerente crearGerente() {
         System.out.print("Ingrese el nombre del gerente: ");
         String nombre = scanner.nextLine();
         System.out.print("Ingrese la edad del gerente: ");
         int edad = scanner.nextInt();
-        scanner.nextLine(); 
+        scanner.nextLine();
         System.out.print("Ingrese el DNI del gerente: ");
         String dni = scanner.nextLine();
         System.out.print("Ingrese el número de empleado del gerente: ");
@@ -242,7 +241,7 @@ public class main {
     private static void actualizarDatosGerente() {
         System.out.print("Ingrese el número de empleado del gerente a actualizar: ");
         String numeroEmpleado = scanner.nextLine();
-        scanner.nextLine(); 
+        scanner.nextLine();
 
         Gerente gerente = manejoPersonas.obtenerGerentePorNumeroEmpleado(numeroEmpleado);
 
@@ -254,7 +253,7 @@ public class main {
             String nombre = scanner.nextLine();
             System.out.print("Ingrese la nueva edad del gerente: ");
             int edad = scanner.nextInt();
-            scanner.nextLine(); 
+            scanner.nextLine();
             System.out.print("Ingrese el nuevo DNI del gerente: ");
             String dni = scanner.nextLine();
             System.out.print("Ingrese la nueva antigüedad del gerente: ");
@@ -282,12 +281,12 @@ public class main {
         String nombre = scanner.nextLine();
         System.out.print("Ingrese la edad del recepcionista: ");
         int edad = scanner.nextInt();
-        scanner.nextLine(); 
+        scanner.nextLine();
         System.out.print("Ingrese el DNI del recepcionista: ");
         String dni = scanner.nextLine();
         System.out.print("Ingrese el número de empleado del recepcionista: ");
         String numeroEmpleado = scanner.nextLine();
-        scanner.nextLine(); 
+        scanner.nextLine();
         System.out.print("Ingrese la antigüedad del recepcionista: ");
         String antiguedad = scanner.nextLine();
         System.out.print("Ingrese el horario del recepcionista: ");
@@ -300,7 +299,7 @@ public class main {
     private static void actualizarDatosRecepcionista() {
         System.out.print("Ingrese el número de empleado del recepcionista a actualizar: ");
         String numeroEmpleado = scanner.nextLine();
-        scanner.nextLine(); 
+        scanner.nextLine();
 
         Recepcionista recepcionista = manejoPersonas.obtenerRecepcionistaPorNumeroEmpleado(numeroEmpleado);
 
@@ -312,7 +311,7 @@ public class main {
             String nombre = scanner.nextLine();
             System.out.print("Ingrese la nueva edad del recepcionista: ");
             int edad = scanner.nextInt();
-            scanner.nextLine(); 
+            scanner.nextLine();
             System.out.print("Ingrese el nuevo DNI del recepcionista: ");
             String dni = scanner.nextLine();
             System.out.print("Ingrese la nueva antigüedad del recepcionista: ");
@@ -340,61 +339,61 @@ public class main {
         String nombre = scanner.nextLine();
         System.out.print("Ingrese la edad del usuario: ");
         int edad = scanner.nextInt();
-        scanner.nextLine(); 
+        scanner.nextLine();
         System.out.print("Ingrese el DNI del usuario: ");
         String dni = scanner.nextLine();
         System.out.print("Ingrese el peso del usuario: ");
         double peso = scanner.nextDouble();
-        scanner.nextLine(); 
+        scanner.nextLine();
         System.out.print("Ingrese la altura del usuario: ");
         double altura = scanner.nextDouble();
-        scanner.nextLine(); 
+        scanner.nextLine();
         System.out.print("Ingrese el plan de entrenamiento del usuario: ");
         String planEntrenamiento = scanner.nextLine();
 
         return new Usuario(nombre, edad, dni, peso, altura, planEntrenamiento);
     }
 
+    // public Usuario(String nombre, int edad, String dni, double peso, double
+    // altura, String planEntrenamiento) {
+    public static void actualizarDatosUsuario() {
+        System.out.print("Ingrese el DNI del usuario a actualizar: ");
+        String dni = scanner.nextLine();
+        scanner.nextLine();
 
-    // public Usuario(String nombre, int edad, String dni, double peso, double altura, String planEntrenamiento) {
-        public static void actualizarDatosUsuario() {
-            System.out.print("Ingrese el DNI del usuario a actualizar: ");
-            String dni = scanner.nextLine();
+        Usuario usuario = manejoPersonas.obtenerUsuarioPorDni(dni);
+
+        if (usuario != null) {
+            System.out.println("Datos actuales del usuario:");
+            System.out.println(usuario);
+
+            System.out.print("Ingrese el nuevo nombre del usuario: ");
+            String nombre = scanner.nextLine();
+            System.out.print("Ingrese la nueva edad del usuario: ");
+            int edad = scanner.nextInt();
             scanner.nextLine();
+            System.out.print("Ingrese el nuevo DNI del usuario: ");
+            String nuevoDni = scanner.nextLine();
+            System.out.print("Ingrese el nuevo peso del usuario: ");
+            double peso = scanner.nextDouble();
+            scanner.nextLine();
+            System.out.print("Ingrese la nueva altura del usuario: ");
+            double altura = scanner.nextDouble();
+            scanner.nextLine();
+            System.out.print("Ingrese el nuevo plan de entrenamiento del usuario: ");
+            String planEntrenamiento = scanner.nextLine();
 
-            Usuario usuario = manejoPersonas.obtenerUsuarioPorDni(dni);
+            usuario.setNombre(nombre);
+            usuario.setEdad(edad);
+            usuario.setDni(nuevoDni);
+            usuario.setPeso(peso);
+            usuario.setAltura(altura);
+            usuario.setPlanEntrenamiento(planEntrenamiento);
 
-            if (usuario != null) {
-                System.out.println("Datos actuales del usuario:");
-                System.out.println(usuario);
-
-                System.out.print("Ingrese el nuevo nombre del usuario: ");
-                String nombre = scanner.nextLine();
-                System.out.print("Ingrese la nueva edad del usuario: ");
-                int edad = scanner.nextInt();
-                scanner.nextLine(); 
-                System.out.print("Ingrese el nuevo DNI del usuario: ");
-                String nuevoDni = scanner.nextLine();
-                System.out.print("Ingrese el nuevo peso del usuario: ");
-                double peso = scanner.nextDouble();
-                scanner.nextLine(); 
-                System.out.print("Ingrese la nueva altura del usuario: ");
-                double altura = scanner.nextDouble();
-                scanner.nextLine(); 
-                System.out.print("Ingrese el nuevo plan de entrenamiento del usuario: ");
-                String planEntrenamiento = scanner.nextLine();
-
-                usuario.setNombre(nombre);
-                usuario.setEdad(edad);
-                usuario.setDni(nuevoDni);
-                usuario.setPeso(peso);
-                usuario.setAltura(altura);
-                usuario.setPlanEntrenamiento(planEntrenamiento);
-
-                manejoPersonas.actualizarUsuario(usuario);
-            } else {
-                System.out.println("No se encontró ningún usuario con el DNI ingresado.");
-            }
+            manejoPersonas.actualizarUsuario(usuario);
+        } else {
+            System.out.println("No se encontró ningún usuario con el DNI ingresado.");
+        }
 
     }
 
@@ -417,7 +416,6 @@ public class main {
         }
     }
 
-
     private static Clases crearClaseYoga() {
         System.out.print("Ingrese el nombre de la clase de Yoga: ");
         String nombre = scanner.nextLine();
@@ -426,10 +424,10 @@ public class main {
         Horario horario = Horario.valueOf(horarioString);
         System.out.print("Ingrese el aforo de la clase de Yoga: ");
         String aforo = scanner.nextLine();
-        scanner.nextLine(); 
+        scanner.nextLine();
         System.out.print("Ingrese la duración de la clase de Yoga: ");
         String duracion = scanner.nextLine();
-        scanner.nextLine(); 
+        scanner.nextLine();
         System.out.print("Ingrese el Numero de empleado del monitor de la clase de Yoga: ");
         Entrenador monitor = manejoPersonas.obtenerEntrenadorPorNumeroEmpleado(scanner.nextLine());
         System.out.print("Ingrese el nivel de la clase de Yoga: ");
@@ -447,10 +445,10 @@ public class main {
         Horario horario = Horario.valueOf(scanner.nextLine());
         System.out.print("Ingrese el aforo de la clase de BodyPump: ");
         String aforo = scanner.nextLine();
-        scanner.nextLine(); 
+        scanner.nextLine();
         System.out.print("Ingrese la duración de la clase de BodyPump: ");
         String duracion = scanner.nextLine();
-        scanner.nextLine(); 
+        scanner.nextLine();
         System.out.print("Ingrese el Numero de empleador del monitor de la clase de BodyPump: ");
         Entrenador monitor = manejoPersonas.obtenerEntrenadorPorNumeroEmpleado(scanner.nextLine());
         System.out.print("Ingrese el nivel de la clase de BodyPump: ");
@@ -470,7 +468,7 @@ public class main {
         String aforo = scanner.nextLine();
         System.out.print("Ingrese la duración de la clase de Ciclismo: ");
         String duracion = scanner.nextLine();
-        scanner.nextLine(); 
+        scanner.nextLine();
         System.out.print("Ingrese el monitor de la clase de Ciclismo: ");
         Entrenador monitor = manejoPersonas.obtenerEntrenadorPorNumeroEmpleado(scanner.nextLine());
         System.out.print("Ingrese el tipo de ciclismo de la clase de Ciclismo: ");
@@ -478,5 +476,52 @@ public class main {
 
         return new Ciclismo(nombre, horario, aforo, duracion, monitor, tipoCiclismo);
     }
+
+    private static void añadirPersonaAClase() {
+        System.out.println("***** Añadir Persona a Clase *****");
+        
+        // Obtener la lista de clases disponibles
+        ArrayList<Clases> listaClases = manejoActividades.getListaClases();
+        
+        // Verificar si hay clases disponibles
+        if (listaClases.isEmpty()) {
+            System.out.println("No hay clases disponibles para añadir personas.");
+            return;
+        }
+        
+        // Mostrar las clases disponibles para elegir
+        System.out.println("Clases Disponibles:");
+        for (int i = 0; i < listaClases.size(); i++) {
+            Clases clase = listaClases.get(i);
+            String estadoAforo = manejoActividades.comprobarAforo(clase) ? " (Aforo Disponible)" : " (Aforo Completo)";
+            System.out.println((i + 1) + ". " + clase.getNombre() + estadoAforo);
+        }
+
+        System.out.print("Ingrese el número de la clase a la que desea añadir una persona: ");
+        int numeroClase = scanner.nextInt();
+        scanner.nextLine();
+
+        // Verificar si el número de clase es válido
+        if (numeroClase < 1 || numeroClase > listaClases.size()) {
+            System.out.println("Número de clase no válido. Por favor, ingrese un número válido.");
+            return;
+        }
+
+        Clases clase = listaClases.get(numeroClase - 1);
+
+        // Verificar si el aforo de la clase está completo
+
+        if (manejoActividades.comprobarAforo(clase)) {
+            System.out.println("Dni del Usuario a añadir: ");
+            String dni = scanner.nextLine();
+            Usuario usuario = manejoPersonas.obtenerUsuarioPorDni(dni);
+            clase.añadirUsuario(usuario);
+        } else {
+            System.out.println("El aforo de la clase está completo. No se puede añadir más personas.");
+        }       
+    }
     
 }
+
+
+
