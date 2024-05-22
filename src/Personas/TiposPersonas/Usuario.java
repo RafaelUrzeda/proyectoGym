@@ -1,4 +1,4 @@
-package Personas;
+package Personas.TiposPersonas;
 
 import Personas.ClasesAbstractas.Persona;
 

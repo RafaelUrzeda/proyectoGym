@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import Actividades.Enums.Horario;
 import Actividades.TiposClases.ClasesAbstractas.Clases;
 import DataBase.DataBaseClases;
-import Personas.Usuario;
+import Personas.TiposPersonas.Usuario;
 
 public class ManejoActividades {
     private ArrayList<Clases> listaClases;

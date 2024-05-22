@@ -6,18 +6,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import Personas.Gerente;
+import Personas.TiposPersonas.Gerente;
 import Util.Constantes;
 
 public class DataBaseGerente {
 
-    public Gerente obtenerGerentePorId(int id) {
+    public Gerente obtenerGerentePorNumeroEmpleado(String id) {
         Gerente gerente = null;
 
         try (Connection conexion = DriverManager.getConnection(Constantes.URL, Constantes.USUARIO, Constantes.CONTRASENA);
              PreparedStatement preparedStatement = conexion.prepareStatement(Constantes.SELECT_DATOS_GERENTES)) {
 
-            preparedStatement.setInt(1, id);
+            preparedStatement.setString(1, id);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     String nombre = resultSet.getString("nombre");
@@ -77,11 +77,11 @@ public class DataBaseGerente {
         }
     }
 
-    public boolean eliminarGerente(int id) {
+    public boolean eliminarGerente(String id) {
         try (Connection conexion = DriverManager.getConnection(Constantes.URL, Constantes.USUARIO, Constantes.CONTRASENA);
              PreparedStatement preparedStatement = conexion.prepareStatement(Constantes.DELETE_DATOS_GERENTES)) {
 
-            preparedStatement.setInt(1, id);
+            preparedStatement.setString(1, id);
             preparedStatement.executeUpdate();
             return true;
         } catch (SQLException e) {

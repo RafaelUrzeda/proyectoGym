@@ -6,18 +6,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import Personas.Recepcionista;
+import Personas.TiposPersonas.Recepcionista;
 import Util.Constantes;
 
 public class DataBaseRecepcionista {
 
-    public Recepcionista obtenerRecepcionistaPorId(int id) {
+    public Recepcionista obtenerRecepcionistaPorNumeroEmpleado(String id) {
         Recepcionista recepcionista = null;
 
         try (Connection conexion = DriverManager.getConnection(Constantes.URL, Constantes.USUARIO, Constantes.CONTRASENA);
              PreparedStatement preparedStatement = conexion.prepareStatement(Constantes.SELECT_DATOS_RECEPCIONISTAS)) {
 
-            preparedStatement.setInt(1, id);
+            preparedStatement.setString(1, id);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     String nombre = resultSet.getString("nombre");
@@ -77,11 +77,11 @@ public class DataBaseRecepcionista {
         }
     }
 
-    public boolean eliminarRecepcionista(int id) {
+    public boolean eliminarRecepcionista(String id) {
         try (Connection conexion = DriverManager.getConnection(Constantes.URL, Constantes.USUARIO, Constantes.CONTRASENA);
              PreparedStatement preparedStatement = conexion.prepareStatement(Constantes.DELETE_DATOS_RECEPCIONISTAS)) {
 
-            preparedStatement.setInt(1, id);
+            preparedStatement.setString(1, id);
             preparedStatement.executeUpdate();
             return true;
         } catch (SQLException e) {

@@ -6,18 +6,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import Personas.Usuario;
+import Personas.TiposPersonas.Usuario;
 import Util.Constantes;
 
 public class DataBaseUsuario {
 
-    public Usuario obtenerUsuarioPorId(int id) {
+    public Usuario obtenerUsuarioPorDni(String id) {
         Usuario usuario = null;
 
         try (Connection conexion = DriverManager.getConnection(Constantes.URL, Constantes.USUARIO, Constantes.CONTRASENA);
              PreparedStatement preparedStatement = conexion.prepareStatement(Constantes.SELECT_DATOS_USUARIOS)) {
 
-            preparedStatement.setInt(1, id);
+            preparedStatement.setString(1, id);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     String nombre = resultSet.getString("nombre");
@@ -74,11 +74,11 @@ public class DataBaseUsuario {
         }
     }
 
-    public boolean eliminarUsuario(int id) {
+    public boolean eliminarUsuario(String id) {
         try (Connection conexion = DriverManager.getConnection(Constantes.URL, Constantes.USUARIO, Constantes.CONTRASENA);
              PreparedStatement preparedStatement = conexion.prepareStatement(Constantes.DELETE_DATOS_USUARIOS)) {
 
-            preparedStatement.setInt(1, id);
+            preparedStatement.setString(1, id);
             preparedStatement.executeUpdate();
             return true;
         } catch (SQLException e) {

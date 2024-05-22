@@ -3,8 +3,8 @@ package Actividades.TiposClases.ClasesAbstractas;
 import java.util.ArrayList;
 
 import Actividades.Enums.Horario;
-import Personas.Usuario;
 import Personas.ClasesAbstractas.Empleado;
+import Personas.TiposPersonas.Usuario;
 
 public abstract class Clases {
     

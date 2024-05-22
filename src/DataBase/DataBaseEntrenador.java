@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import Personas.Entrenador;
+import Personas.TiposPersonas.Entrenador;
 import Util.Constantes;
 
 public class DataBaseEntrenador {
@@ -76,11 +76,11 @@ public class DataBaseEntrenador {
         }
     }
 
-    public boolean eliminarEntrenador(int id) {
+    public boolean eliminarEntrenador(String id) {
         try (Connection conexion = DriverManager.getConnection(Constantes.URL, Constantes.USUARIO, Constantes.CONTRASENA);
              PreparedStatement preparedStatement = conexion.prepareStatement(Constantes.DELETE_DATOS_ENTRENADORES)) {
 
-            preparedStatement.setInt(1, id);
+            preparedStatement.setString(1, id);
             preparedStatement.executeUpdate();
             return true;
         } catch (SQLException e) {

@@ -14,11 +14,11 @@ import Actividades.TiposClases.Bodypump;
 import Actividades.TiposClases.Ciclismo;
 import Actividades.TiposClases.Yoga;
 import Actividades.TiposClases.ClasesAbstractas.Clases;
-import Personas.Entrenador;
-import Personas.Gerente;
-import Personas.Recepcionista;
-import Personas.Usuario;
 import Personas.ClasesAbstractas.Empleado;
+import Personas.TiposPersonas.Entrenador;
+import Personas.TiposPersonas.Gerente;
+import Personas.TiposPersonas.Recepcionista;
+import Personas.TiposPersonas.Usuario;
 import Util.Constantes;
 
 public class DataBaseClases {
