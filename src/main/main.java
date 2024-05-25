@@ -189,7 +189,7 @@ public class main {
 
         if (entrenador != null) {
             System.out.println("Datos actuales del entrenador:");
-            System.out.println(entrenador);
+            System.out.println(entrenador.toString());
 
             System.out.print("Ingrese el nuevo nombre del entrenador: ");
             String nombre = scanner.nextLine();
@@ -516,6 +516,7 @@ public class main {
             String dni = scanner.nextLine();
             Usuario usuario = manejoPersonas.obtenerUsuarioPorDni(dni);
             clase.añadirUsuario(usuario);
+            manejoActividades.añadirPersonaAClase(clase, usuario);
         } else {
             System.out.println("El aforo de la clase está completo. No se puede añadir más personas.");
         }       

@@ -18,6 +18,7 @@ public class ManejoActividades {
     }
 
     public ArrayList<Clases> getListaClases() {
+        listaClases = dataBaseClases.cargarClasesDesdeBaseDatos();
         return listaClases;
     }
 

@@ -68,6 +68,7 @@ public class DataBaseEntrenador {
             preparedStatement.setString(5, entrenador.getAntiguedad());
             preparedStatement.setString(6, entrenador.getHorario());
             preparedStatement.setString(7, entrenador.getEspecialidad());
+            preparedStatement.setString(8, entrenador.getNumeroEmpleado());
             preparedStatement.executeUpdate();
             return true;
         } catch (SQLException e) {
